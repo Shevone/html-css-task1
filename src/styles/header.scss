@@ -1,0 +1,64 @@
+// Верхняя часть - заголовок
+.header {
+  background-color: $bg-secondary;
+  // box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.12);
+  
+  // содержимое
+  &__content {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+  }
+  // картиночка тинькоф
+  &__logo {
+    margin-right: 48px;
+    height: 34px;
+    width: 151px;
+  }
+  // список записей финтех курсы стажировки мероприятия
+  .nav {
+    // чтоб было в строку
+    &__list {
+      display: flex;
+      align-items: center;
+      column-gap: 24px;
+      list-style-type: none;
+    }
+    // то как должен выглядить текст
+    &__item {
+      @include paragraph-2;
+      // срабатывает когда пользователь наводи курсор
+      &:hover {
+        position: relative;
+        color: $text-primary;
+
+         &::before {
+          // Для любого контенат 'подставляет строку указанную тут'
+          content: "";
+          position: relative;
+          left: 0;
+          // изначально черта сверху
+          bottom: -110%;
+          height: 2px;
+          width: 100%;
+          background-color: #000000;
+         }
+      }
+    }
+  }
+  //  расоплодение кнопки войти
+  &__login {
+    margin-left: auto;
+  }
+  // внешний вид кнопки войти
+  .login {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    cursor: pointer; // свойство, которое ответчает за то, есои мы наводимся - то рука
+
+    &__text {
+      color: #336fee;
+    }
+  }
+}

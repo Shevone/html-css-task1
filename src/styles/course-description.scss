@@ -1,0 +1,33 @@
+.course-description {
+  &__title {
+    @include heading-1; // Берём стиль для заголовка
+
+    text-align: center;
+  }
+
+  &__content {
+    // отступ сверзу и снизу
+    margin-top: 24px;
+    padding: 24px 0;
+    list-style-type: none; // убераем точечки
+    display: flex; // чтоб они были в строку
+    column-gap: 48px; // отстум между квадратами
+  }
+
+  .content-item {
+    flex: 1;
+    padding: 32px;
+    background-color: $bg-secondary;
+    border-radius: 24px;
+
+    &__title {
+      @include heading-2;
+    }
+
+    &__text {
+      @include paragraph-1;
+
+      margin-top: 16px;
+    }
+  }
+}
